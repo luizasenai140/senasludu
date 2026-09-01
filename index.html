@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompts para Manufatura Industrial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen py-10 px-4 font-sans">
 
+    <div class="max-w-4xl mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-blue-400 mb-3">
+                <i class="fa-solid fa-industry mr-2"></i>Prompts para Manufatura Industrial
+            </h1>
+            <p class="text-slate-400 max-w-xl mx-auto">
+                Selecione e copie o prompt ideal para estruturar seus projetos de engenharia, otimização Lean ou Indústria 4.0.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-blue-500 transition-all">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="p-2 bg-blue-500/10 text-blue-400 rounded-lg">
+                            <i class="fa-solid fa-gauge-high text-xl"></i>
+                        </span>
+                        <h2 class="font-semibold text-lg text-white">1. Otimização & Lean</h2>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-700/50 mb-4">
+                        <p class="text-xs text-slate-300 font-mono leading-relaxed" id="prompt-1">
+"Atue como um Engenheiro Especialista em Manufatura Industrial e Lean Manufacturing. Preciso otimizar a linha de produção do seguinte produto: [Insira o produto, ex: peças automotivas].
+
+Desenvolva um plano detalhado considerando:
+1. Gargalos e Fluxo (VSM)
+2. Estratégia para OEE
+3. Aplicação dos 8 desperdícios Lean
+4. Plano de ação (Curto, Médio e Longo prazo)."
+                        </p>
+                    </div>
+                </div>
+                <button onclick="copyToClipboard('prompt-1', this)" class="w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm rounded-lg flex items-center justify-center space-x-2 transition-colors">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copiar Prompt</span>
+                </button>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-emerald-500 transition-all">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                            <i class="fa-solid fa-microchip text-xl"></i>
+                        </span>
+                        <h2 class="font-semibold text-lg text-white">2. Indústria 4.0</h2>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-700/50 mb-4">
+                        <p class="text-xs text-slate-300 font-mono leading-relaxed" id="prompt-2">
+"Atue como Consultor de Transformação Digital na Indústria. Estou elaborando um projeto para modernizar uma fábrica do setor [Insira o setor].
+
+Estruture uma proposta técnica incluindo:
+1. Tecnologias-Chave (IoT, Preditiva, Robótica)
+2. Infraestrutura e Integração (ERP/MES)
+3. Análise de Viabilidade (Custos, ROI e Riscos)."
+                        </p>
+                    </div>
+                </div>
+                <button onclick="copyToClipboard('prompt-2', this)" class="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm rounded-lg flex items-center justify-center space-x-2 transition-colors">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copiar Prompt</span>
+                </button>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 flex flex-col justify-between shadow-lg hover:border-purple-500 transition-all">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="p-2 bg-purple-500/10 text-purple-400 rounded-lg">
+                            <i class="fa-solid fa-diagram-project text-xl"></i>
+                        </span>
+                        <h2 class="font-semibold text-lg text-white">3. Gestão de Projeto</h2>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-lg border border-slate-700/50 mb-4">
+                        <p class="text-xs text-slate-300 font-mono leading-relaxed" id="prompt-3">
+"Atue como Gerente de Projetos Industriais Senior. Preciso criar o termo de abertura e a EAP para a instalação de [Insira o objetivo].
+
+Forneça a estrutura completa contendo:
+1. Fases e Entregáveis (Engenharia, Comissionamento, Ramp-up)
+2. Cronograma Macro e Marcos
+3. Matriz de Riscos e Planos de Contingência."
+                        </p>
+                    </div>
+                </div>
+                <button onclick="copyToClipboard('prompt-3', this)" class="w-full py-2.5 px-4 bg-purple-600 hover:bg-purple-500 text-white font-medium text-sm rounded-lg flex items-center justify-center space-x-2 transition-colors">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copiar Prompt</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId, button) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = button.innerHTML;
+                button.innerHTML = `<i class="fa-solid fa-check"></i> <span>Copiado!</span>`;
+                button.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-600');
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
